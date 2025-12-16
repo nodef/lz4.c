@@ -1,0 +1,26 @@
+{
+  "name": "lz4.c",
+  "version": "1.10.1",
+  "description": "Extremely Fast Compression algorithm; lz4 (2011).",
+  "keywords": [
+    "c",
+    "library",
+    "compression",
+    "decompression",
+    "lz4"
+  ],
+  "homepage": "https://github.com/nodef/lz4.c#readme",
+  "bugs": {
+    "url": "https://github.com/nodef/lz4.c/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/lz4.c.git"
+  },
+  "license": "BSD-2-Clause",
+  "author": "wolfram77@gmail.com",
+  "main": "lz4.h",
+  "scripts": {
+    "test": "bash build.sh test"
+  }
+}
