@@ -11,15 +11,50 @@ LZ4 is a lossless compression algorithm offering:
 
 ## Installation
 
-```bash
-npm i lz4.c
+Run:
+
+```sh
+$ npm i lz4.c
 ```
-Include headers in your C project:
+
+And then include `lz4.h` as follows:
+
 ```c
-#include "node_modules/lz4.c/lib/lz4.h"
-#include "node_modules/lz4.c/lib/lz4hc.h"  // High compression mode
-#include "node_modules/lz4.c/lib/lz4file.h"  // File API
-#include "node_modules/lz4.c/lib/lz4frame.h" // Frame API
+// main.c
+#define LZ4_IMPLEMENTATION
+#define LZ4HC_ENABLE     // Optional: Enable high compression functions
+#define LZ4FRAME_ENABLE  // Optional: Enable frame API functions
+#define LZ4FILE_ENABLE   // Optional: Enable file I/O functions
+#include "node_modules/lz4.c/lz4.h"
+
+int main() { /* ... */ }
+```
+
+And then compile with `clang` or `gcc` as usual.
+
+```bash
+$ clang main.c  # or, use gcc
+$ gcc   main.c
+```
+
+You may also use a simpler approach:
+
+```c
+// main.c
+#define LZ4_IMPLEMENTATION
+#define LZ4HC_ENABLE     // Optional: Enable high compression functions
+#define LZ4FRAME_ENABLE  // Optional: Enable frame API functions
+#define LZ4FILE_ENABLE   // Optional: Enable file I/O functions
+#include <lz4.h>
+
+int main() { /* ... */ }
+```
+
+If you add the path `node_modules/lz4.c` to your compiler's include paths.
+
+```bash
+$ clang -I./node_modules/lz4.c main.c  # or, use gcc
+$ gcc   -I./node_modules/lz4.c main.c
 ```
 
 <br>

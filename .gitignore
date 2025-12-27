@@ -1,6 +1,8 @@
 # Build artifacts
 .build/
 *.exe
+*.lz4
+*.lz4.dec
 
 # Logs
 logs
