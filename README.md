@@ -25,36 +25,23 @@ And then include `lz4.h` as follows:
 #define LZ4HC_ENABLE     // Optional: Enable high compression functions
 #define LZ4FRAME_ENABLE  // Optional: Enable frame API functions
 #define LZ4FILE_ENABLE   // Optional: Enable file I/O functions
-#include "node_modules/lz4.c/lz4.h"
-
-int main() { /* ... */ }
-```
-
-And then compile with `clang` or `gcc` as usual.
-
-```bash
-$ clang main.c  # or, use gcc
-$ gcc   main.c
-```
-
-You may also use a simpler approach:
-
-```c
-// main.c
-#define LZ4_IMPLEMENTATION
-#define LZ4HC_ENABLE     // Optional: Enable high compression functions
-#define LZ4FRAME_ENABLE  // Optional: Enable frame API functions
-#define LZ4FILE_ENABLE   // Optional: Enable file I/O functions
 #include <lz4.h>
 
 int main() { /* ... */ }
 ```
 
-If you add the path `node_modules/lz4.c` to your compiler's include paths.
+Finally, compile while adding the path `node_modules/lz4.c` to your compiler's include paths.
 
 ```bash
 $ clang -I./node_modules/lz4.c main.c  # or, use gcc
 $ gcc   -I./node_modules/lz4.c main.c
+```
+
+You may also use a simpler approach with the [cpoach](https://www.npmjs.com/package/cpoach.sh) tool, which automatically adds the necessary include paths of all the installed dependencies for your project.
+
+```bash
+$ cpoach clang main.c  # or, use gcc
+$ cpoach gcc   main.c
 ```
 
 <br>
@@ -85,6 +72,7 @@ LZ4 is available in multiple languages (Java, C#, Python, etc.). See the [LZ4 Ho
 <br>
 
 
+[![](https://raw.githubusercontent.com/qb40/designs/gh-pages/0/image/11.png)](https://wolfram77.github.io)<br>
 [![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/lz4/lz4)
 [![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
 ![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/lz4.c)
